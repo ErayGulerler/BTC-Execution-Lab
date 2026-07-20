@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BTC execution study | June 2024</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f2e9;color:#142c32;font:16px/1.55 'Segoe UI',Arial,sans-serif}
+main{max-width:1000px;margin:auto;padding:45px 5% 60px}header{border-block:1px solid #294a4c;padding:14px 0;display:flex;justify-content:space-between;font:600 12px/1.5 ui-monospace,monospace;letter-spacing:.08em}
+h1,h2{font-family:Georgia,serif;font-weight:normal}h1{font-size:clamp(40px,6vw,74px);line-height:1.04;margin:42px 0 14px;letter-spacing:-.045em}h2{font-size:30px;line-height:1.2;margin:32px 0 10px}p{max-width:78ch}a{color:#0e625a}
+.metric{display:flex;align-items:center;gap:28px;border-block:1px solid #b5bdb6;padding:14px 0;margin:24px 0 12px}.metric b{font:52px/1.2 Georgia,serif;color:#14594f}.metric span{font-size:15px}
+table{width:100%;border-collapse:collapse;white-space:nowrap;font-variant-numeric:tabular-nums}th,td{padding:9px 8px;text-align:right;border-bottom:1px solid #cbd0c7}th:first-child,td:nth-child(2){text-align:left}thead{font-size:13px;color:#456267}.scroll{overflow-x:auto}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:15px}.row{display:grid;grid-template-columns:45px 1fr 50px;align-items:center;gap:8px;font:12px/1.7 ui-monospace,monospace}.row span{text-align:right}.track{height:16px;position:relative;background:linear-gradient(to right,transparent 49.7%,#748781 49.7%,#748781 50.3%,transparent 50.3%)}.track i{position:absolute;top:4px;height:8px}.note{border-left:3px solid #478379;padding-left:16px}footer{border-top:1px solid #9faea5;margin-top:32px;padding:14px 0;font-size:13px}@media(max-width:700px){.charts{grid-template-columns:1fr}.metric{gap:14px}.metric b{font-size:38px}main{padding:25px 4%}}
+</style><main><header><span>EXECUTION LAB</span><span>BTC / USDT &nbsp; · &nbsp; JUN 2024</span></header>
+<h1>When should an order trade?</h1>
+<p>Two schedules try to execute the same order in one hour. TWAP targets equal slices. The volume schedule shifts quantity toward minutes that traded more heavily in the previous seven days.</p>
+<div class="metric"><b>$delta bp</b><span>Mean cost difference, volume minus TWAP<br>95% day-block interval &nbsp; $interval bp</span></div>
+<p class="note">$conclusion</p>
+<h2>Cost and completion</h2><p>Each row covers $orders simulated parent orders. Shortfall measures cost against the first trade price in the hour. Lower is better. The 95th percentile shows the expensive end of the distribution. Completion is the average fraction of each order filled by the deadline.</p>
+<div class="scroll"><table><thead><tr><th>Order · participation limit</th><th>Schedule</th><th>Orders</th><th>Mean bp</th><th>95th pct bp</th><th>Filled</th></tr></thead><tbody>$rows</tbody></table></div>
+<h2>Does the choice survive a tighter cap?</h2>
+<div class="scroll"><table><thead><tr><th>Order · participation limit</th><th>Paired mean bp</th><th>95% interval bp</th></tr></thead><tbody>$paired</tbody></table></div>
+<div class="charts"><section><h2>Daily cost difference</h2><p>Base case, basis points. Bars to the left favor the volume schedule.</p>$bars</section>
+<section><h2>How to read the result</h2><p>June 1–7 supplies the initial forecast. June 8–30 supplies six orders per day. Both schedules see the same hour, order side and quantity. Forecast weights update each day using only the preceding seven days.</p>
+<p>The model charges 4 bp in fees, 0.5 bp in half-spread and a participation-dependent impact cost. A missed fill stays in the denominator and its cost is marked at the last close. Historical prices and volumes come from one-minute trades. Quotes, queue position and actual fills are unobserved.</p>
+<p>Uncertainty is estimated from 2,000 resamples of three-day blocks. A single month gives limited evidence across market regimes.</p><p><a href="orders.csv">Order-level attribution</a> · <a href="pairs.csv">Paired comparisons</a> · <a href="comparison.csv">Scenario estimates</a></p></section></div>
+<footer>Historical bars from <a href="https://github.com/binance/binance-public-data">Binance Vision</a>. Simulated results and derived tables are shared under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.</footer></main></html>
+
