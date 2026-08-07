@@ -2,7 +2,7 @@
 
 A one-hour BTC order is too large to assume it all trades at the opening price. This project compares two ways of splitting it across the hour. TWAP targets equal slices. A second schedule uses the last seven days of volume to decide when to trade more heavily.
 
-**Start with [the execution report](sample/report.html).** It opens offline and includes the decision, the order-size stress test and downloadable order-level results. [CV wording and an interview walkthrough](docs/portfolio.md) are included.
+**Start with [the execution report](sample/report.html).** It opens offline and includes the decision, the order-size stress test and downloadable order-level results.
 
 ## Result
 
@@ -12,7 +12,7 @@ Order size mattered more to completion. At 12 BTC, the volume schedule filled **
 
 ## Run it
 
-Extract the ZIP first. Open a terminal in the folder containing this README. Use Python 3.10 or later and a C++17 compiler. The Python code uses the standard library. The data is bundled, and the experiment runs offline.
+Open a terminal in the repository root. Use Python 3.10 or later and a C++17 compiler. The Python code uses the standard library. The data is bundled, and the experiment runs offline.
 
 ```sh
 python run.py
@@ -39,5 +39,5 @@ The base case targets 12 BTC at up to 5% of minute volume. Two stress cases tigh
 
 ## Why this stack
 
-C++ handles the repeatable execution loop, Python handles validation and statistical analysis, and SQL makes each reported cost traceable to individual fills. The language choice follows examples of quant roles that ask for model implementation, simulation and execution analysis. The sources are examples of hiring requirements, not a market-wide ranking. [Citadel quantitative research internship](https://www.citadel.com/careers/details/quantitative-research-analyst-intern-bs-ms-europe/) · [IMC quantitative trading role](https://www.imc.com/us/careers/jobs/4787640101)
+C++ handles the repeatable execution loop, Python handles validation and statistical analysis, and SQL makes each reported cost traceable to individual fills.
 

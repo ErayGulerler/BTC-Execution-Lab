@@ -9,5 +9,5 @@ The original, unmodified archive contains BTCUSDT spot one-minute bars for June 
 
 Pinned SHA-256: `90f4fc3f55918787848c71f4cd0f2f1a5851bbffaf6392e76e9ab555b7479d2b`.
 
-Historical data © Binance Vision. The normalized data, simulated cost tables and figures derived from this archive are shared under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Changes consist of selecting trading windows, computing minute VWAP and applying the documented execution model. The data and results are for noncommercial research and portfolio use.
+Historical data © Binance Vision. The normalized data, simulated cost tables and figures derived from this archive are shared under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). Changes consist of selecting trading windows, computing minute VWAP and applying the documented execution model. The data and results are for noncommercial research use.
 
